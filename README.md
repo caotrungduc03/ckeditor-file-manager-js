@@ -1,0 +1,1 @@
+# ckeditor-file-manager-js
