@@ -1,0 +1,22 @@
+extends layout
+block content
+	script(src="/javascripts/jquery-1.11.1.min.js")
+	script(src="/javascripts/ckeditor/ckeditor.js")
+
+	script.
+		$(document).ready(function(){
+			
+			CKEDITOR.config.extraPlugins = 'filebrowser';
+			CKEDITOR.config.language = 'en';
+			CKEDITOR.config.fillEmptyBlocks = false;
+
+			CKEDITOR.replace( 'productContentEditor' , {
+		    filebrowserBrowseUrl: '/javascripts/ckeditor/plugins/filemanager/browser/default/browser.html?Connector=/browser/browse',
+		    filebrowserUploadUrl: '/uploader/upload?Type=File',
+		    filebrowserImageUploadUrl: '/uploader/upload?Type=Image',
+		    filebrowserFlashUploadUrl: '/uploader/upload?Type=Flash'
+		  });
+		})
+	h1= title
+	p Welcome to #{title}
+	textarea#productContentEditor

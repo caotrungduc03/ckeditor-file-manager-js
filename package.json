@@ -1,0 +1,34 @@
+{
+  "name": "ckeditor-file-manager-js",
+  "version": "1.0.0",
+  "description": "Nodejs implementation of FCKEditor’s File Manager (File Browser) feature integration in CKEditor",
+  "main": "browser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "browser.js",
+    "file_manager"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TrungDuc19/ckeditor-file-manager-js"
+  },
+  "keywords": [
+    "ckeditor-file-manager-js",
+    "file-manager-ckeditor",
+    "ckeditor-file-manager",
+    "file-manager-js"
+  ],
+  "dependencies": {
+    "escape-html": "^1.0.3",
+    "skipper": "^0.9.3",
+    "xml": "^1.0.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrungDuc19/ckeditor-file-manager-js/issues"
+  },
+  "homepage": "https://github.com/TrungDuc19/ckeditor-file-manager-js#readme"
+}
