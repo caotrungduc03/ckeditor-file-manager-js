@@ -84,9 +84,23 @@
 		}
 
 		function OpenFile(fileUrl) {
-			window.top.opener.SetUrl(fileUrl);
+			//PATCH: Using CKEditors API we set the file in preview window.	
+
+			funcNum = GetUrlParam('CKEditorFuncNum');
+			//fixed the issue: images are not displayed in preview window when filename contain spaces due encodeURI encoding already encoded fileUrl
+			window.top.opener.CKEDITOR.tools.callFunction(funcNum, fileUrl);
+
 			window.top.close();
 			window.top.opener.focus();
+		}
+
+		function GetUrlParam(paramName) {
+			var oRegex = new RegExp('[\?&]' + paramName + '=([^&]+)', 'i');
+			var oMatch = oRegex.exec(window.top.location.search);
+			if (oMatch && oMatch.length)
+				return decodeURIComponent(oMatch[1]);
+			else
+			return '';
 		}
 
 		function LoadResources(resourceType, folderPath) {
